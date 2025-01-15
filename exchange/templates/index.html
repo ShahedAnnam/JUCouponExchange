@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <title>JU Coupon Exchange</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Bree+Serif&display=swap">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">JU Coupon Exchange</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Show</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+        {% comment %} <div class="container-fluid p-5 bg-primary text-white text-center header">
+            <h1>Welcome to JU Coupon Exchange</h1>
+            <p>This is a page for exchange your allotted hall coupon to desire one</p>
+        </div> {% endcomment %}
+
+        <form action="/list/" method="POST">  {% csrf_token %}
+
+            <div class="row">
+
+                <div class="col-sm-6">
+                    <label for="allotedHall">দিতে চাই </label>
+                    <select name="allotedHall" id="allotedHall">
+                        <option value="SRH">Select your alloted hall</option>
+                        <option value="SRH">শেখ রাসেল হল</option>
+                        <option value="SRJ">শহীদ রফিক জব্বার হল</option>
+                        <option value="RTH">বিশ্বকবি রবীন্দ্রনাথ ঠাকুর হল</option>
+                        <option value="STH">শহীদ তাজউদ্দীন আহম্মেদ হল</option>
+                        <option value="KNI">জাতীয় কবি কাজী নজরুল ইসলাম হল</option>
+                        <option value="MBH"> মওলানা ভাসানী হল</option>
+                        <option value="BB"> বঙ্গবন্ধু শেখ মুজিবুর রহমান হল</option>
+                        <option value="KM">আফম কামালউদ্দীন হল</option>
+                        <option value="SSB">শহীদ সালাম-বরকত হল</option>
+                    </select>
+                </div>
+
+                <div class="col-sm-6">
+                    <label for="desiredHall">নিতে চাই </label>
+                    <select name="desiredHall" id="desiredHall">
+                        <option value="SRH">Select your desired hall</option>
+                        <option value="SRH">শেখ রাসেল হল</option>
+                        <option value="SRJ">শহীদ রফিক জব্বার হল</option>
+                        <option value="RTH">বিশ্বকবি রবীন্দ্রনাথ ঠাকুর হল</option>
+                        <option value="STH">শহীদ তাজউদ্দীন আহম্মেদ হল</option>
+                        <option value="KNI">জাতীয় কবি কাজী নজরুল ইসলাম হল</option>
+                        <option value="MBH"> মওলানা ভাসানী হল</option>
+                        <option value="BB"> বঙ্গবন্ধু শেখ মুজিবুর রহমান হল</option>
+                        <option value="KM">আফম কামালউদ্দীন হল</option>
+                        <option value="SSB">শহীদ সালাম-বরকত হল</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="info">
+                <label for="name">Name: </label>
+                <input type="text" name="name" id="name" required>
+            </div>
+
+            <div class="info">
+                <label for="dept">Department: </label>
+                <input type="text" name="dept" id="dept" required>
+            </div>
+
+            <div class="info">
+                <label for="batch">Batch : </label>
+                <select name="batch" id="batch">
+                    <option value="0">select your batch</option>
+                    <option value="47">47</option>
+                    <option value="48">48</option>
+                    <option value="49">49</option>
+                    <option value="50">50</option>
+                    <option value="51">51</option>
+                    <option value="52">52</option>
+                    <option value="53">53</option>
+                    <option value="54">54</option>
+                    <option value="55">55</option>
+                </select>
+            </div>
+
+            <div class="info">
+                <label for="number">Contact Number: </label>
+                <input type="tel" name="number" id="number" required>
+            </div>
+
+            <div class="info">
+                <label for="message">message:  </label> <br>
+                <textarea name="message" id="message" rows="3" cols="20" placeholder="Drop your any suggetion (optional)"></textarea>
+            </div>
+
+        <button type="submit" id="submit">Submit</button>
+
+        </form>
+    </div>
+
+
+    <footer>
+        <p>All rights reserve to Shahed (CSE-50, SRH)</p>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
