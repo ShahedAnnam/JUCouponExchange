@@ -21,5 +21,8 @@ from exchange import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home,name='home'),
+    path('form/',views.form,name='form'),
+    path('loginForm/',views.loginForm,name='loginForm'),
+    path('saveInfo/',views.saveInfo,name='saveInfo'),
     path('list/',views.list,name='list')
 ]

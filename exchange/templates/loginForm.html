@@ -1,0 +1,157 @@
+{% extends "basic.html" %}
+{% block title %}Login Form{% endblock %}
+
+{% block head %} 
+{% endblock %}
+
+{% block css %}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url( '../static/images/JUimg4.jpg' );
+    background-size: cover;
+    background-position: center;
+    opacity: 0.6; /* Adjust transparency */
+    z-index: -1;
+}
+
+body{
+    position: relative;
+    margin: 0; /* Remove default margin */
+    height: 100vh; /* Ensure body takes full height */
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    flex-direction: column;
+}
+
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 70px); /* Adjust for navbar height */
+    padding: 20px;
+}
+
+.login-form {
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 30px 40px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: scale(1.02);
+}
+
+.register-link {
+    color: #ffffff;
+    background-color:rgb(37, 173, 155); /* Green color */
+    padding: 0.25em 0.65em;
+    border-radius: 0.4em;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-link:hover {
+    background-color:rgb(22, 81, 40); /* Darker green on hover */
+}
+
+span{
+    font-style: italic;
+    font-family: 'cursive';
+    font-size: 1.1em;
+    color: rgb(149, 17, 109);
+}
+
+
+{% endblock %}
+
+{% block body %}
+
+    {% if successMessage %}
+
+     <div class="alert alert-success" role="alert">
+         {{successMessage}}
+     </div>
+
+    {% endif %}
+
+<div class="form-container">
+
+    <div class="login-form">
+        <h1>Login</h1>
+        <form method="post" action="/loginForm/">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="batch">Batch</label>
+                <input type="number" id="batch" name="batch" class="form-control" placeholder="Enter Batch" required>
+            </div>
+            <div class="form-group">
+                <label for="roll">Roll</label>
+                <input type="number" id="roll" name="roll" class="form-control" placeholder="Enter Roll" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+
+        {% if error_message %}
+        <div class="alert alert-danger mt-3">
+            <strong>Error:</strong> {{ error_message | safe }}
+        </div>
+        {% endif %}
+
+        <div class="my-5" role="alert">
+           <span>Not registered yet !?</span> <a href='/form/' class='register-link'>register first</a>.
+        </div>
+       
+
+    </div>
+</div>
+
+{% endblock %}

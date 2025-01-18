@@ -1,12 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>This is List page</h1>
-    <h3> {{message}} </h3>
-</body>
-</html>
+{% extends "basic.html"%}
+
+{% block title %}List{% endblock %}
+
+{% block js %} {% endblock%}
+
+
+
+  {% block body%}
+    
+      <form action='/list/'>
+        <div class="form-group">
+          <select class="form-select" aria-label="Default select example" name="allotedHall" id='allotedHall'>
+            <option value="">Select your alloted hall</option>
+            <option value="SRH">শেখ রাসেল হল</option>
+            <option value="SRJ">শহীদ রফিক জব্বার হল</option>
+            <option value="RTH">বিশ্বকবি রবীন্দ্রনাথ ঠাকুর হল</option>
+            <option value="STH">শহীদ তাজউদ্দীন আহম্মেদ হল</option>
+            <option value="KNI">জাতীয় কবি কাজী নজরুল ইসলাম হল</option>
+            <option value="MBH"> মওলানা ভাসানী হল</option>
+            <option value="BB"> বঙ্গবন্ধু শেখ মুজিবুর রহমান হল</option>
+            <option value="KM">আফম কামালউদ্দীন হল</option>
+            <option value="SSB">শহীদ সালাম-বরকত হল</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <select class="form-select" aria-label="Default select example" name="desiredHall" id='desiredHall'>
+            <option value="">Select your desired hall</option>
+            <option value="SRH">শেখ রাসেল হল</option>
+            <option value="SRJ">শহীদ রফিক জব্বার হল</option>
+            <option value="RTH">বিশ্বকবি রবীন্দ্রনাথ ঠাকুর হল</option>
+            <option value="STH">শহীদ তাজউদ্দীন আহম্মেদ হল</option>
+            <option value="KNI">জাতীয় কবি কাজী নজরুল ইসলাম হল</option>
+            <option value="MBH"> মওলানা ভাসানী হল</option>
+            <option value="BB"> বঙ্গবন্ধু শেখ মুজিবুর রহমান হল</option>
+            <option value="KM">আফম কামালউদ্দীন হল</option>
+            <option value="SSB">শহীদ সালাম-বরকত হল</option>
+          </select>
+    
+        <button type="submit" class="btn btn-primary bg-success">Search</button>
+      </form>
+
+        <table class="table table-striped table-hover table-sm">
+            <thead class='thead-dark'>
+              <tr>
+                <th scope="col">serial</th>
+                <th scope="col">নিতে চায়</th>
+                <th scope="col">দিতে চায়</th>
+                <th scope="col">Name</th>
+                <th scope="col">batch</th>
+                <th scope="col">Department</th>
+                <th scope="col">Contact number</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for student in students %}
+              <tr>
+                <th scope="row">{{forloop.counter}}</th>
+                <td>{{student.allotedHall}}</td>
+                <td>{{student.desiredHall}}</td>
+                <td>{{student.name}}</td>
+                <td>{{student.batch}}</td>
+                <td>{{student.dept}}</td>
+                <td>{{student.number}}</td>
+            {% endfor %}
+            </tbody>
+          </table>
+
+ {% endblock%}

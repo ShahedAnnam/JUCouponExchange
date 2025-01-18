@@ -8,11 +8,12 @@ class Student(models.Model):
     name  = models.CharField(max_length=50)
     dept = models.CharField(max_length=50)
     batch = models.IntegerField()
+    roll = models.IntegerField()
     number = models.CharField(max_length=50)
     message = models.TextField()
     allotedHall = models.CharField(max_length=50)
     desiredHall = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.name
+         return f"{self.name} | {self.dept} | {self.batch} | {self.allotedHall} -> {self.desiredHall}"
 

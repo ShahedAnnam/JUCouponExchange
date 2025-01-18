@@ -1,0 +1,24 @@
+{% extends "basic.html"%}
+{% block title %}JU Coupon Exchange{% endblock %}
+
+{% block head %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'styleHome.css' %}">
+{% endblock %}
+
+{% block js %} {% endblock %}
+
+{% block body %}
+<div class="container text-center my-5">
+    <h1 class="display-4 ">Welcome to JU Coupon Exchange</h1>
+    <p class="lead text-muted descS">A platform dedicated to helping Jahangirnagar University students easily exchange hall feast coupons. Post your requirements, find others to exchange with, and make the most of your coupons for the annual Victory Day feast. Join us in building a connected campus community!</p>
+
+    <div class="cta-section mx-auto text-center col-12 col-sm-10 col-md-8 col-lg-6">
+        <h3 class="cta-heading">Register to Post and Search Your Desired Coupon</h3>
+        <a href="/form" class="btn btn-gradient btn-lg ">Register</a>
+        <h3 class="cta-heading mt-4">Already Registered?</h3>
+        <a href="/loginForm" class="btn btn-gradient-secondary btn-lg">Login</a>
+    </div>
+    
+</div>
+{% endblock %}
