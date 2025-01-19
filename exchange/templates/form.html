@@ -1,96 +1,87 @@
 {% extends "basic.html"%}
 {% block title %}Form{% endblock %}
 
-{% block head %} {% load static %} <link rel="stylesheet" href="{% static 'styles.css' %}"> {% endblock %}
+{% block head %} {% load static %} <link rel="stylesheet" href="{% static 'styleForm.css' %}"> {% endblock %}
 
 {% block js %} {% endblock%}
 
 
 
    {%block body%}
-
-        <form action="/saveInfo/" method="POST">  {% csrf_token %}
-
-            <div class="row">
-
-                <div class="col-sm-6">
-                    <label for="allotedHall">দিতে চাই </label>
-                    <select name="allotedHall" id="allotedHall">
-                        <option value="">Select your alloted hall</option>
-                        <option value="SRH">শেখ রাসেল হল</option>
-                        <option value="SRJ">শহীদ রফিক জব্বার হল</option>
-                        <option value="RTH">বিশ্বকবি রবীন্দ্রনাথ ঠাকুর হল</option>
-                        <option value="STH">শহীদ তাজউদ্দীন আহম্মেদ হল</option>
-                        <option value="KNI">জাতীয় কবি কাজী নজরুল ইসলাম হল</option>
-                        <option value="MBH"> মওলানা ভাসানী হল</option>
-                        <option value="BB"> বঙ্গবন্ধু শেখ মুজিবুর রহমান হল</option>
-                        <option value="KM">আফম কামালউদ্দীন হল</option>
-                        <option value="SSB">শহীদ সালাম-বরকত হল</option>
-                    </select>
-                </div>
-
-                <div class="col-sm-6">
-                    <label for="desiredHall">নিতে চাই </label>
-                    <select name="desiredHall" id="desiredHall">
-                        <option value="">Select your desired hall</option>
-                        <option value="SRH">শেখ রাসেল হল</option>
-                        <option value="SRJ">শহীদ রফিক জব্বার হল</option>
-                        <option value="RTH">বিশ্বকবি রবীন্দ্রনাথ ঠাকুর হল</option>
-                        <option value="STH">শহীদ তাজউদ্দীন আহম্মেদ হল</option>
-                        <option value="KNI">জাতীয় কবি কাজী নজরুল ইসলাম হল</option>
-                        <option value="MBH"> মওলানা ভাসানী হল</option>
-                        <option value="BB"> বঙ্গবন্ধু শেখ মুজিবুর রহমান হল</option>
-                        <option value="KM">আফম কামালউদ্দীন হল</option>
-                        <option value="SSB">শহীদ সালাম-বরকত হল</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="info">
-                <label for="name">Name: </label>
-                <input type="text" name="name" id="name" required>
-            </div>
-
-            <div class="info">
-                <label for="dept">Department: </label>
-                <input type="text" name="dept" id="dept" required>
-            </div>
-
-            <div class="info">
-                <label for="batch">Batch : </label>
-                <select name="batch" id="batch">
-                    <option value="0">select your batch</option>
-                    <option value="47">47</option>
-                    <option value="48">48</option>
-                    <option value="49">49</option>
-                    <option value="50">50</option>
-                    <option value="51">51</option>
-                    <option value="52">52</option>
-                    <option value="53">53</option>
-                    <option value="54">54</option>
-                    <option value="55">55</option>
+        
+   <form action="/saveInfo/" method="POST">
+    {% csrf_token %}
+    <div class="container">
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="allotedHall" class="form-label">দিতে চাই</label>
+                <select name="allotedHall" id="allotedHall" class="form-select form-control">
+                    <option value="">Select your alloted hall</option>
+                    <option value="SRH">শেখ রাসেল হল</option>
+                    <option value="SRJ">শহীদ রফিক জব্বার হল</option>
+                    <option value="RTH">বিশ্বকবি রবীন্দ্রনাথ ঠাকুর হল</option>
+                    <option value="STH">শহীদ তাজউদ্দীন আহম্মেদ হল</option>
+                    <option value="KNI">জাতীয় কবি কাজী নজরুল ইসলাম হল</option>
+                    <option value="MBH">মওলানা ভাসানী হল</option>
+                    <option value="BB">বঙ্গবন্ধু শেখ মুজিবুর রহমান হল</option>
+                    <option value="KM">আফম কামালউদ্দীন হল</option>
+                    <option value="SSB">শহীদ সালাম-বরকত হল</option>
                 </select>
             </div>
-
-            <div class="info">
-                <label for="roll">Class Roll: </label>
-                <input type="number" name="roll" id="roll" required>
+            <div class="col-md-6">
+                <label for="desiredHall" class="form-label">নিতে চাই</label>
+                <select name="desiredHall" id="desiredHall" class="form-select form-control">
+                    <option value="">Select your desired hall</option>
+                    <option value="SRH">শেখ রাসেল হল</option>
+                    <option value="SRJ">শহীদ রফিক জব্বার হল</option>
+                    <option value="RTH">বিশ্বকবি রবীন্দ্রনাথ ঠাকুর হল</option>
+                    <option value="STH">শহীদ তাজউদ্দীন আহম্মেদ হল</option>
+                    <option value="KNI">জাতীয় কবি কাজী নজরুল ইসলাম হল</option>
+                    <option value="MBH">মওলানা ভাসানী হল</option>
+                    <option value="BB">বঙ্গবন্ধু শেখ মুজিবুর রহমান হল</option>
+                    <option value="KM">আফম কামালউদ্দীন হল</option>
+                    <option value="SSB">শহীদ সালাম-বরকত হল</option>
+                </select>
             </div>
-
-            <div class="info">
-                <label for="number">Contact Number: </label>
-                <input type="tel" name="number" id="number" required>
-            </div>
-
-            <div class="info">
-                <label for="message">message:  </label> <br>
-                <textarea name="message" id="message" rows="3" cols="20" placeholder="Drop your any suggetion (optional)"></textarea>
-            </div>
-
-        <button type="submit" id="submit">Submit</button>
-
-        </form>
+        </div>
+        <div class="mb-3">
+            <label for="name" class="form-label">Name:</label>
+            <input type="text" name="name" id="name" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="dept" class="form-label">Department:</label>
+            <input type="text" name="dept" id="dept" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="batch" class="form-label">Batch:</label>
+            <select name="batch" id="batch" class="form-select form-control">
+                <option value="0">Select your batch</option>
+                <option value="47">47</option>
+                <option value="48">48</option>
+                <option value="49">49</option>
+                <option value="50">50</option>
+                <option value="51">51</option>
+                <option value="52">52</option>
+                <option value="53">53</option>
+                <option value="54">54</option>
+                <option value="55">55</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="roll" class="form-label">Class Roll:</label>
+            <input type="number" name="roll" id="roll" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="number" class="form-label">Contact Number:</label>
+            <input type="tel" name="number" id="number" class="form-control " required>
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">Message:</label>
+            <textarea name="message" id="message" class="form-control" rows="3" placeholder="Drop any suggestion or a message to us (optional)"></textarea>
+        </div>
+        <button type="submit" id='submit' class="btn btn-primary">Submit</button>
     </div>
+</form>
 
 
     {% endblock%}

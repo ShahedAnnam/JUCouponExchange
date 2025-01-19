@@ -12,6 +12,20 @@
 
 <style>
   {% block css %} {% endblock %}
+
+  footer{
+    background-color:rgb(0, 24, 47); 
+    color: #ffffff;        
+    text-align: center;       
+    padding: 0.7em 0;        
+    font-size: 14px;                
+    width: 100%;           
+    bottom: 0;    
+    left: 0;
+    right: 0;   
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* Add a slight shadow */
+}
+
 </style>
 
 <body>
@@ -19,17 +33,14 @@
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-              <a class="navbar-brand" href="/">JU Coupon Exchange</a>
+              <a class="navbar-brand" href="/"><img class="img-fluid" style="max-height:1.75em" src="{% static '/images/ju-coupon-exchange-high-resolution-logo-transparent.png' %}" alt="logo img"></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Home</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/form">form</a>
+                    <a class="nav-link" aria-current="page" href="/">Home</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="/list">Show</a>
@@ -48,9 +59,10 @@
      {% block body %}
 
      {% endblock %}
+    
+    </div>
 
-
-    <footer >
+    <footer>
         <p>All rights reserve to Shahed (CSE-50, SRH)</p>
     </footer>
 
