@@ -18,7 +18,7 @@ body {
     margin: 0;
     padding: 0; /* Remove padding to avoid unwanted gaps */
     box-sizing: border-box; /* Ensure all elements respect the border-box model */
-    height: 100vh; /* Full viewport height */
+    height: 100vh; 
     width: 100vw; /* Full viewport width */
     display: flex;
     font-family: Arial, Helvetica, sans-serif;
