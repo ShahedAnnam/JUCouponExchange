@@ -18,7 +18,7 @@
 
   .navbar{
       background: linear-gradient(90deg, 	#217b7e,rgb(49, 105, 107)); 
-      padding: 0.5em 5em 0.5em 2em;
+      padding: 0.5em 10em 0.5em 1em;
       width: 55%;
       margin: auto;
       border-radius: 3em;
@@ -26,17 +26,18 @@
       top: 1.5em; 
       left: 50%; /* Move to the center */
       transform: translateX(-50%);
-
   }
 
   .navbar-nav{
+    width: 90%;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
   }
 
   .navbar .nav-link {
     color: wheat !important; /* Link color */
-    margin: 0 3.5rem; 
+    {% comment %} margin: 0 3.5rem;  {% endcomment %}
     font-size: 1.2rem; /* Increase font size */
     font-family: "Archivo", 'Poppins';
     font-weight: 800; /* Adjust font weight */
@@ -59,20 +60,25 @@
   }
 
 
-
   /* Media Query for smaller screens */
-  @media (max-width: 768px) {
+
+
+  @media (max-width: 992px) and (min-width: 576px) {
     .navbar {
-      width: 97%; /* Reduce navbar width for smaller screens */
-      padding: 0.4rem 0.8rem; /* Adjust padding */
-      top: 1em; /* Move navbar slightly higher */
+        width: 80%; /* Wider navbar for tablets */
+        padding: 0.5em 2em; /* Adjust padding */
     }
 
     .navbar .nav-link {
-      margin: 0 1.2rem; /* Reduce spacing between links */
-      font-size: 1rem; /* Reduce font size */
+        font-size: 1rem; /* Slightly smaller font size */
     }
-  }
+
+    .navbar-brand img {
+        width: 5em; /* Slightly smaller logo */
+        height: 1.5em;
+    }
+}
+
 
   @media (max-width: 576px) {
     .navbar {
