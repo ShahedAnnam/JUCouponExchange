@@ -6,6 +6,9 @@
 
 {% block css %}
 
+
+
+/* Background Styling */
 body::before {
     content: "";
     position: absolute;
@@ -13,47 +16,55 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url( '../static/images/JUimg4.jpg' );
+    background-image: url('../static/images/JUimg4.jpg');
     background-size: cover;
     background-position: center;
-    opacity: 0.6; /* Adjust transparency */
+    filter: brightness(0.8) blur(3px); /* Slight blur & dimming for better contrast */
+    opacity: 0.7;
     z-index: -1;
 }
 
-body{
+body {
     position: relative;
-    margin: 0; /* Remove default margin */
-    height: 100vh; /* Ensure body takes full height */
+    margin: 0;
+    height: 100vh;
     display: flex;
     font-family: Arial, Helvetica, sans-serif;
     flex-direction: column;
 }
 
-
+/* Form Container */
 .form-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 70px); /* Adjust for navbar height */
-    padding: 20px;
+    min-height: calc(100vh - 70px);
+    padding: 10px;
 }
 
+/* Login Form Styling */
 .login-form {
-    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin-top: 10em;
+    background: rgba(255, 255, 255, 0.1); /* Glassmorphic effect */
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
     padding: 30px 40px;
     width: 100%;
     max-width: 400px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
+/* Title */
 .login-form h1 {
     text-align: center;
     margin-bottom: 20px;
     font-size: 1.8em;
-    color: #333;
+    color: #ffffff;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
 }
 
+/* Form Group */
 .form-group {
     margin-bottom: 15px;
 }
@@ -62,52 +73,74 @@ body{
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
+    color: #ffffff;
 }
 
+/* Input Fields */
 .form-control {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: none;
     border-radius: 5px;
+    background: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    font-size: 1em;
+    outline: none;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Submit Button */
 .btn {
     width: 100%;
-    padding: 10px 20px;
+    padding: 12px 20px;
     font-size: 1em;
-    border-radius: 5px;
-    transition: all 0.3s ease;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    border: none;
 }
 
+/* Primary Button */
 .btn-primary {
-    background-color: #007bff;
-    border: none;
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
     color: white;
+    box-shadow: 0 5px 12px rgba(255, 65, 108, 0.5);
 }
 
 .btn-primary:hover {
-    background-color: #0056b3;
-    transform: scale(1.02);
+    background: linear-gradient(135deg, #ff4b2b, #ff416c);
+    transform: scale(1.05);
 }
 
+/* Register Link */
 .register-link {
     color: #ffffff;
-    background-color:rgb(37, 173, 155); /* Green color */
-    padding: 0.25em 0.65em;
-    border-radius: 0.4em;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    padding: 0.4em 0.8em;
+    border-radius: 0.5em;
     text-decoration: none;
     font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 198, 255, 0.5);
 }
 
 .register-link:hover {
-    background-color:rgb(22, 81, 40); /* Darker green on hover */
+    background: linear-gradient(135deg, #0072ff, #00c6ff);
+    transform: scale(1.05);
 }
 
-span{
+/* Fancy Text */
+span {
     font-style: italic;
     font-family: 'cursive';
     font-size: 1.1em;
-    color: rgb(149, 17, 109);
+    font-weight: bold;
+    color:rgb(202, 244, 14);
+    {% comment %} text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3); {% endcomment %}
 }
 
 
