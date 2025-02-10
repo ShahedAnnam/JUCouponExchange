@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,100..900;1,100..900&family=Baloo+2:wght@400..800&display=swap');
+
+.homecontainer {
+    transform: scale(0.8);
+    /* Scale only the content */
+    transform-origin: top left;
+    width: 125%;
+    /* Expand width to compensate */
+    height: 125%;
+    /* Expand height to compensate */
+}
+
+.navbar {
+    background: linear-gradient(90deg, #217b7e, rgb(49, 105, 107));
+    padding: 0.5em 10em 0.5em 1em;
+    width: 55%;
+    margin: auto;
+    border-radius: 3em;
+    position: fixed;
+    top: 1.5em;
+    left: 50%;
+    /* Move to the center */
+    transform: translateX(-50%);
+}
+
+.navbar-nav {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.navbar .nav-link {
+    color: wheat !important;
+    font-size: 1.2rem;
+    /* Increase font size */
+    font-family: "Archivo",
+        'Poppins';
+    font-weight: 800;
+    /* Adjust font weight */
+    transition: color 0.3s ease;
+    /* Smooth color transition */
+}
+
+.navbar .nav-link:hover {
+    color: rgb(243, 243, 5) !important;
+    /* Change color on hover */
+    transform: translateY(2px);
+}
+
+.navbar-brand img {
+    width: 6em;
+    height: 2em;
+}
+
+
+.navbar .navbar-brand:hover {
+    transform: scale(1.1);
+    /* Slight zoom on hover */
+}
+
+
+/* Media Query for smaller screens */
+
+
+@media (max-width: 992px) and (min-width: 576px) {
+    .navbar {
+        width: 80%;
+        /* Wider navbar for tablets */
+        padding: 0.5em 2em;
+        /* Adjust padding */
+    }
+
+    .navbar .nav-link {
+        font-size: 1rem;
+        /* Slightly smaller font size */
+    }
+
+    .navbar-brand img {
+        width: 5em;
+        /* Slightly smaller logo */
+        height: 1.5em;
+    }
+}
+
+
+@media (max-width: 576px) {
+    .navbar {
+        width: 99%;
+        padding: 0 0;
+        /* Adjust padding */
+        top: 1em;
+        /* Align it at the top */
+    }
+
+    .navbar .nav-link {
+        font-size: 0.7rem;
+        font-weight: 400;
+    }
+
+    .navbar-brand {
+        font-size: 1.38rem;
+        margin-left: 0.6em;
+        margin-right: 0;
+    }
+
+    .navbar-brand img {
+        width: 3em;
+        height: 1em;
+    }
+
+}
+
+
+footer {
+    background-color: rgb(0, 24, 47);
+    color: #ffffff;
+    text-align: center;
+    padding: 1em 0;
+    font-size: 14px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+    max-width: 1200px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 7em;
+}
+
+.social-link {
+    color: white;
+    font-size: 1.4rem;
+    transition: 0.3s ease;
+}
+
+.social-link:hover {
+    color: #00bcd4;
+    /* Cyan Hover Effect */
+    transform: scale(1.2);
+}
+
+.footer-text {
+    margin-left: auto;
+    font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .social-icons {
+        margin-bottom: 10px;
+    }
+
+    .footer-text {
+        margin-left: 0;
+    }
+}

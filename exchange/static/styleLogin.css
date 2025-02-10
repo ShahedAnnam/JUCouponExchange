@@ -1,0 +1,307 @@
+/* Background Styling */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../static/images/JUimg4.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.8) blur(3px);
+    opacity: 0.7;
+    z-index: -1;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    height: auto;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    flex-direction: column;
+}
+
+/* Form Container */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 70px);
+    padding: 10px;
+}
+
+/* Login Form Styling */
+.login-form {
+    margin-top: 10em;
+    background: rgba(255, 255, 255, 0.1);
+    /* Glassmorphic effect */
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+    padding: 30px 40px;
+    width: 100%;
+    max-width: 400px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Title */
+.login-form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    color: #ffffff;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Input Fields */
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    font-size: 1em;
+    outline: none;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Submit Button */
+.btn {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 1em;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    border: none;
+}
+
+/* Primary Button */
+.btn-primary {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    color: white;
+    box-shadow: 0 5px 12px rgba(255, 65, 108, 0.5);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #ff4b2b, #ff416c);
+    transform: scale(1.05);
+}
+
+/* Register Link */
+.register-link {
+    color: rgb(255, 255, 255);
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    padding: 0.4em 0.8em;
+    border-radius: 0.5em;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 198, 255, 0.5);
+}
+
+.register-link:hover {
+    background: linear-gradient(135deg, #0072ff, #00c6ff);
+    transform: scale(1.05);
+}
+
+/* Fancy Text */
+span {
+    font-style: italic;
+    font-family: 'cursive';
+    font-size: 1.1em;
+    font-weight: bold;
+    color: rgb(202, 244, 14);
+    /* text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);  */
+}
+
+/* after login */
+
+.welcome-container {
+    background: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    padding: 2em;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+    font-family: Arial, sans-serif;
+    text-align: justify;
+    max-width: 700px;
+    /* Responsive width */
+    margin: auto;
+    /* Center vertically */
+    margin-top: 12em;
+    line-height: 1.6;
+}
+
+/* Center the container on smaller screens */
+@media (max-width: 576px) {
+    .welcome-container {
+        padding: 13px;
+        max-width: 77%;
+        margin-top: 7em;
+        font-size: 0.9em;
+    }
+
+    .button-container {
+        flex-direction: column;
+    }
+
+    .button-container .btn {
+        width: 100%;
+        /* Full-width buttons */
+    }
+}
+
+
+.welcome-container h2 {
+    text-align: center;
+    color: #ffcc00;
+}
+
+.welcome-container h6 {
+    text-align: center;
+    color: #25ff34;
+}
+
+.welcome-container ul {
+    padding-left: 20px;
+}
+
+.important {
+    color: #ff6666;
+    font-weight: bold;
+}
+
+/* Button Container - Aligns buttons in one row on larger screens */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    /* Spacing between buttons */
+    margin-top: 20px;
+}
+
+/* Button Styling */
+.button-container .btn {
+    flex: 1;
+    /* Ensures equal width */
+    text-align: center;
+    padding: 12px 15px;
+    font-size: 1em;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    border: none;
+    min-width: 100px;
+    /* Ensures proper size */
+}
+
+/* Button Colors */
+/* Updated Button Colors */
+
+.btn-info {
+    background: linear-gradient(135deg, #00eaff, #007bff);
+    color: white;
+    box-shadow: 0 6px 14px rgba(0, 234, 255, 0.5);
+}
+
+.btn-warning {
+    background: linear-gradient(135deg, #ffdd00, #ff8800);
+    color: white;
+    box-shadow: 0 6px 14px rgba(255, 221, 0, 0.5);
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #ff0040, #ff2200);
+    color: white;
+    box-shadow: 0 6px 14px rgba(255, 0, 64, 0.5);
+}
+
+/* Add a hover effect */
+.button-container .btn:hover {
+    transform: scale(1.08);
+    filter: brightness(1.1);
+}
+
+
+
+
+/* for message */
+
+
+.message-container {
+    position: fixed;
+    top: 30%; /* Position slightly above the middle */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the container horizontally and vertically */
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-popup {
+    background: rgba(255, 255, 255, 0.2); /* Slightly transparent background for a modern effect */
+    backdrop-filter: blur(8px); /* Subtle blur for a glassmorphic effect */
+    color: rgb(0, 9, 56);
+    font-weight: bold;
+    padding: 20px 40px;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    min-width: 280px;
+    animation: fadeOut 5s ease-in-out 1.5s forwards;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Light border for modern effect */
+    opacity: 0.9; /* Slightly higher opacity for visibility */
+    max-width: 500px; /* Limit the max width for a more compact look */
+}
+
+/* Gradient Border Effect */
+.custom-popup::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: linear-gradient(135deg, #cfba8a, #87301a); /* Dark modern gradient */
+    border-radius: 12px;
+    z-index: -1;
+    filter: blur(6px);
+    opacity: 0.5;
+}
+
+/* Smooth Fade-out Animation */
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; visibility: hidden; }
+}
+
+/* For Smaller Screens */
+@media (max-width: 576px) {
+    .custom-popup {
+        font-size: 1em; /* Slightly smaller text on smaller screens */
+        padding: 15px 25px; /* Adjust padding for small screens */
+        min-width: 200px; /* Adjust minimum width */
+    }
+}

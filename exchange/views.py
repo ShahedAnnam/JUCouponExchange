@@ -1,6 +1,6 @@
-from django.shortcuts import HttpResponse
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,HttpResponse,get_object_or_404
 from .models import Student
+from django.contrib import messages
 
 
 
@@ -21,14 +21,37 @@ def loginForm(request):
         students = Student.objects.filter(batch=batch, roll=roll)
 
         if students.exists():
-            
-            return redirect('list') 
+            student = students.first()
+            request.session['is_authenticated'] = True 
+            request.session['roll'] = roll  
+            request.session['batch'] = batch 
+            return render(request, 'loginForm.html', {'student': student})
         else:
-            error_message = "No matching records found. Please check your batch and roll number"
-            return render(request, 'loginForm.html', {'error_message': error_message})
+            messages.error(request, "No matching records found. Please check your batch and roll number or if not registed yet,then register first")
 
     return render(request,'loginForm.html')
 
+
+def logout(request):
+    request.session.flush() 
+    return redirect('loginForm')
+
+
+
+
+def delete_request(request):
+    batch = request.session.get('batch')
+    roll = request.session.get('roll')
+
+
+    deleted_count, _ = Student.objects.filter(batch=batch, roll=roll).delete()
+    if deleted_count > 0:
+        messages.success(request, "Your records have been successfully deleted.")
+        logout(request)
+    else:
+        messages.error(request, "No matching records found to delete.")
+
+    return redirect('loginForm') 
 
 
 def saveInfo(request):
@@ -54,12 +77,14 @@ def saveInfo(request):
         )
         student.save()
 
-    successMessage = "Successfully registerd,your record is saved, login to see the coupon exhcange list"
-
-    return render(request,'loginForm.html',{'successMessage': successMessage})
+    messages.success(request, "Successfully registerd,your record is saved, login to see the coupon exhcange list")
+    return render(request,'loginForm.html')
+    
 
 
 def list(request):
+
+    
     alloted_hall_filter = request.GET.get('allotedHall',None)
     desired_hall_filter = request.GET.get('desiredHall',None)
 
@@ -70,6 +95,10 @@ def list(request):
         students = students.filter(allotedHall=alloted_hall_filter)
     if desired_hall_filter:
         students = students.filter(desiredHall=desired_hall_filter)
+
+        
+    if not request.session.get('is_authenticated'):
+        return render(request, 'list.html', {'is_blurred': True,'students': students})
 
     return render(request, 'list.html', {'students': students})
 

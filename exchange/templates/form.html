@@ -17,7 +17,7 @@
                 <label for="allotedHall" class="form-label">দিতে চাই</label>
                 <select name="allotedHall" id="allotedHall" class="form-select form-control">
                     <option value="">Select your alloted hall</option>
-                    <option value="SRH">শেখ রাসেল হল</option>
+                    <option value="B24">বিজয় ২৪ হল</option>
                     <option value="SRJ">শহীদ রফিক জব্বার হল</option>
                     <option value="RTH">বিশ্বকবি রবীন্দ্রনাথ ঠাকুর হল</option>
                     <option value="STH">শহীদ তাজউদ্দীন আহম্মেদ হল</option>
@@ -32,7 +32,7 @@
                 <label for="desiredHall" class="form-label">নিতে চাই</label>
                 <select name="desiredHall" id="desiredHall" class="form-select form-control">
                     <option value="">Select your desired hall</option>
-                    <option value="SRH">শেখ রাসেল হল</option>
+                    <option value="B24">বিজয় ২৪ হল</option>
                     <option value="SRJ">শহীদ রফিক জব্বার হল</option>
                     <option value="RTH">বিশ্বকবি রবীন্দ্রনাথ ঠাকুর হল</option>
                     <option value="STH">শহীদ তাজউদ্দীন আহম্মেদ হল</option>
@@ -54,8 +54,8 @@
         </div>
         <div class="mb-3">
             <label for="batch" class="form-label">Batch:</label>
-            <select name="batch" id="batch" class="form-select form-control">
-                <option value="0">Select your batch</option>
+            <select name="batch" id="batch" class="form-select form-control" required>
+                <option value="" disabled selected>Select your batch</option>
                 <option value="47">47</option>
                 <option value="48">48</option>
                 <option value="49">49</option>
@@ -79,7 +79,7 @@
             <label for="message" class="form-label">Message:</label>
             <textarea name="message" id="message" class="form-control" rows="3" placeholder="Drop any suggestion or a message to us (optional)"></textarea>
         </div>
-        <button type="submit" id='submit' class="btn btn-primary">Submit</button>
+        <button type="submit" id="submit" class="btn btn-primary">Submit</button>
     </div>
 </form>
 
