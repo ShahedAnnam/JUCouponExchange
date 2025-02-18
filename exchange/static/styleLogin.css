@@ -270,7 +270,7 @@ span {
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
     text-align: center;
     min-width: 280px;
-    animation: fadeOut 5s ease-in-out 1.5s forwards;
+    animation: fadeOut 6s ease-in-out 1.5s forwards;
     border: 1px solid rgba(255, 255, 255, 0.3); /* Light border for modern effect */
     opacity: 0.9; /* Slightly higher opacity for visibility */
     max-width: 500px; /* Limit the max width for a more compact look */

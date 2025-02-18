@@ -6,13 +6,46 @@
 <link rel="stylesheet" href="{% static 'styleHome.css' %}">
 {% endblock %}
 
-{% block js %} {% endblock %}
 
 {% block body %}
 <div class="container text-center my-5">
     <h1 class="display-4 ">Welcome to JU Coupon Exchange</h1>
     <p class="lead text-muted descS">A platform dedicated to helping Jahangirnagar University students easily exchange hall feast coupons. Post your requirements, find others to exchange with, and make the most of your coupons for the annual Victory Day feast. Join us in building a connected campus community!</p>
+    
+    {% comment %} <div id="countdown-container">
+        <h2>🕒 Next Feast Loading</h2>
+        <div id="countdown">
+            <span id="days"></span> days 
+            <span id="hours"></span> hours 
+            <span id="minutes"></span> mins 
+            <span id="seconds"></span> secs
+        </div>
+    </div> {% endcomment %}
 
+    <div id="countdown-container">
+        <h2>🕒 Next Feast Loading</h2>
+        <div id="countdown">
+            <div class="time-box">
+                <span id="days"></span>
+                <small>Days</small>
+            </div>
+            <div class="time-box">
+                <span id="hours"></span>
+                <small>Hours</small>
+            </div>
+            <div class="time-box">
+                <span id="minutes"></span>
+                <small>Mins</small>
+            </div>
+            <div class="time-box">
+                <span id="seconds"></span>
+                <small>Secs</small>
+            </div>
+        </div>
+        <p>স্বাধীনতা দিবস মহাভোজ</p>
+    </div>
+    
+    
     <div class="cta-section mx-auto text-center col-12 col-sm-10 col-md-8 col-lg-6">
         <h3 class="cta-heading">Register to Post and Search Your Desired Coupon</h3>
         <a href="/form" class="btn btn-gradient btn-lg ">Register</a>
@@ -20,5 +53,39 @@
         <a href="/loginForm" class="btn btn-gradient-secondary btn-lg">Login</a>
     </div>
 </div>
+
+
+<script>
+    // Set the feast date (YYYY, MM-1, DD, HH, MM, SS)
+    const feastDate = new Date("2025-03-26T18:00:00").getTime();
+    
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const timeLeft = feastDate - now;
+        
+        if (timeLeft <= 0) {
+            document.getElementById("countdown").innerHTML = "🎉 Feast Day is Here!";
+            clearInterval(countdownTimer);
+            return;
+        }
+        
+        // Calculate days, hours, minutes, seconds
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+    
+    // Display the countdown
+    document.getElementById("days").innerText = days;
+    document.getElementById("hours").innerText = hours;
+    document.getElementById("minutes").innerText = minutes;
+    document.getElementById("seconds").innerText = seconds;
+}
+
+// Update the countdown every second
+const countdownTimer = setInterval(updateCountdown, 1000);
+updateCountdown(); // Call immediately to avoid delay
+
+</script>
 
 {% endblock %}

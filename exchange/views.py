@@ -92,9 +92,9 @@ def list(request):
     students = Student.objects.all()
 
     if alloted_hall_filter:
-        students = students.filter(allotedHall=alloted_hall_filter)
+        students = students.filter(allotedHall=desired_hall_filter)
     if desired_hall_filter:
-        students = students.filter(desiredHall=desired_hall_filter)
+        students = students.filter(desiredHall=alloted_hall_filter)
 
         
     if not request.session.get('is_authenticated'):
@@ -104,5 +104,5 @@ def list(request):
 
 
 def about(request):
-    return render(request,'index.html')
+    return render(request,'about.html')
 
