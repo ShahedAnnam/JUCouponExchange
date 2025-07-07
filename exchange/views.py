@@ -54,31 +54,66 @@ def delete_request(request):
     return redirect('loginForm') 
 
 
+# def saveInfo(request):
+#     if request.method=='POST':
+#         name = request.POST.get('name')
+#         dept = request.POST.get('dept')
+#         batch = request.POST.get('batch')
+#         roll = request.POST.get('roll')
+#         number = request.POST.get('number')
+#         message = request.POST.get('message', '') 
+#         allotedHall = request.POST.get('allotedHall')
+#         desiredHall = request.POST.get('desiredHall')
+
+#         student = Student(
+#             name=name,
+#             dept=dept,
+#             batch=batch,
+#             roll=roll,
+#             number=number,
+#             message=message,
+#             allotedHall=allotedHall,
+#             desiredHall=desiredHall
+#         )
+#         student.save()
+
+#     messages.success(request, "Successfully registerd,your record is saved, login to see the coupon exhcange list")
+#     return render(request,'loginForm.html')
+
+from django.db import IntegrityError
+
 def saveInfo(request):
-    if request.method=='POST':
-        name = request.POST.get('name')
-        dept = request.POST.get('dept')
+    if request.method == 'POST':
         batch = request.POST.get('batch')
         roll = request.POST.get('roll')
-        number = request.POST.get('number')
-        message = request.POST.get('message', '') 
-        allotedHall = request.POST.get('allotedHall')
-        desiredHall = request.POST.get('desiredHall')
+        
+        # Check if batch and roll already exist
+        if Student.objects.filter(batch=batch, roll=roll).exists():
+            messages.error(request, "You have already registered with this batch and roll.")
+            return render(request, 'form.html')
 
+        # Proceed to save if unique
         student = Student(
-            name=name,
-            dept=dept,
+            name=request.POST.get('name'),
+            dept=request.POST.get('dept'),
             batch=batch,
             roll=roll,
-            number=number,
-            message=message,
-            allotedHall=allotedHall,
-            desiredHall=desiredHall
+            number=request.POST.get('number'),
+            message=request.POST.get('message', ''),
+            allotedHall=request.POST.get('allotedHall'),
+            desiredHall=request.POST.get('desiredHall')
         )
-        student.save()
+        try:
+            student.save()
+            messages.success(request, "Successfully registered, your record is saved.")
+            return redirect('loginForm')
+        except IntegrityError:
+            messages.error(request, "Registration with this batch and roll already exists.")
+            return render(request, 'form.html')
 
-    messages.success(request, "Successfully registerd,your record is saved, login to see the coupon exhcange list")
-    return render(request,'loginForm.html')
+    # fallback
+    return render(request, 'form.html')
+
     
 
 

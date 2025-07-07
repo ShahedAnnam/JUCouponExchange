@@ -14,6 +14,9 @@ class Student(models.Model):
     allotedHall = models.CharField(max_length=50)
     desiredHall = models.CharField(max_length=50)
 
+    class Meta:
+        unique_together = ('batch', 'roll')  
+
     def __str__(self):
          return f"{self.name} | {self.dept} | {self.batch} | {self.allotedHall} -> {self.desiredHall}"
 

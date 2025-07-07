@@ -6,8 +6,17 @@
 {% block js %} {% endblock%}
 
 
-
    {%block body%}
+
+   {% if messages %}
+    <div class="message-container alert alert-success custom-popup">
+      {% for message in messages %}
+        <div> {{ message }} </div>
+      {% endfor %}
+    </div>
+   {% endif %}
+
+
         
    <form action="/saveInfo/" method="POST">
     {% csrf_token %}
@@ -15,32 +24,36 @@
         <div class="row mb-3">
             <div class="col-md-6">
                 <label for="allotedHall" class="form-label">দিতে চাই</label>
-                <select name="allotedHall" id="allotedHall" class="form-select form-control">
+                <select name="allotedHall" id="allotedHall" class="form-select form-control" required>
                     <option value="">Select your alloted hall</option>
-                    <option value="B24">বিজয় ২৪ হল</option>
-                    <option value="SRJ">শহীদ রফিক জব্বার হল</option>
+                    <option value="H21">২১ নং হল</option>
+                    <option value="SRJ">শহীদ রফিক-জব্বার হল</option>
                     <option value="RTH">বিশ্বকবি রবীন্দ্রনাথ ঠাকুর হল</option>
                     <option value="STH">শহীদ তাজউদ্দীন আহম্মেদ হল</option>
                     <option value="KNI">জাতীয় কবি কাজী নজরুল ইসলাম হল</option>
                     <option value="MBH">মওলানা ভাসানী হল</option>
-                    <option value="BB">বঙ্গবন্ধু শেখ মুজিবুর রহমান হল</option>
+                    <option value="H10">১০ নং হল</option>
                     <option value="KM">আফম কামালউদ্দীন হল</option>
                     <option value="SSB">শহীদ সালাম-বরকত হল</option>
+                    <option value="MMH">মীর মোশাররফ হোসেন হল</option>
+                    <option value="ABH">আল বেরুনী হল</option>
                 </select>
             </div>
             <div class="col-md-6">
                 <label for="desiredHall" class="form-label">নিতে চাই</label>
-                <select name="desiredHall" id="desiredHall" class="form-select form-control">
+                <select name="desiredHall" id="desiredHall" class="form-select form-control" required>
                     <option value="">Select your desired hall</option>
-                    <option value="B24">বিজয় ২৪ হল</option>
-                    <option value="SRJ">শহীদ রফিক জব্বার হল</option>
+                    <option value="H21">২১ নং হল</option>
+                    <option value="SRJ">শহীদ রফিক-জব্বার হল</option>
                     <option value="RTH">বিশ্বকবি রবীন্দ্রনাথ ঠাকুর হল</option>
                     <option value="STH">শহীদ তাজউদ্দীন আহম্মেদ হল</option>
                     <option value="KNI">জাতীয় কবি কাজী নজরুল ইসলাম হল</option>
                     <option value="MBH">মওলানা ভাসানী হল</option>
-                    <option value="BB">বঙ্গবন্ধু শেখ মুজিবুর রহমান হল</option>
+                    <option value="H10">১০ নং হল</option>
                     <option value="KM">আফম কামালউদ্দীন হল</option>
                     <option value="SSB">শহীদ সালাম-বরকত হল</option>
+                    <option value="MMH">মীর মোশাররফ হোসেন হল</option>
+                    <option value="ABH">আল বেরুনী হল</option>
                 </select>
             </div>
         </div>
@@ -82,6 +95,7 @@
         <button type="submit" id="submit" class="btn btn-primary">Submit</button>
     </div>
 </form>
+
 
 
     {% endblock%}

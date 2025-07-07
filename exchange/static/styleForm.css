@@ -84,3 +84,65 @@ form{
     outline: none; /* Removes default outline */
     box-shadow: 0 0 8px rgba(255, 0, 0, 0.7); /* Glowing focus effect */
 }
+
+
+
+/* for message */
+
+
+.message-container {
+    position: fixed;
+    top: 30%; /* Position slightly above the middle */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the container horizontally and vertically */
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.custom-popup {
+    background: rgba(255, 255, 255, 0.2); /* Slightly transparent background for a modern effect */
+    backdrop-filter: blur(8px); /* Subtle blur for a glassmorphic effect */
+    color: rgb(0, 9, 56);
+    font-weight: bold;
+    padding: 20px 40px;
+    border-radius: 15px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    min-width: 280px;
+    animation: fadeOut 6s ease-in-out 1.5s forwards;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Light border for modern effect */
+    opacity: 0.9; /* Slightly higher opacity for visibility */
+    max-width: 500px; /* Limit the max width for a more compact look */
+}
+
+/* Gradient Border Effect */
+.custom-popup::before {
+    content: "";
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: linear-gradient(135deg, #cfba8a, #87301a); /* Dark modern gradient */
+    border-radius: 12px;
+    z-index: -1;
+    filter: blur(6px);
+    opacity: 0.5;
+}
+
+/* Smooth Fade-out Animation */
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; visibility: hidden; }
+}
+
+/* For Smaller Screens */
+@media (max-width: 576px) {
+    .custom-popup {
+        font-size: 1em; /* Slightly smaller text on smaller screens */
+        padding: 15px 25px; /* Adjust padding for small screens */
+        min-width: 200px; /* Adjust minimum width */
+    }
+}
