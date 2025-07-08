@@ -48,17 +48,22 @@
 
 <script>
     // Set the feast date (YYYY, MM-1, DD, HH, MM, SS)
-    const feastDate = new Date("2025-07-13T18:00:00").getTime();
+    const feastDate = new Date("2025-07-13T19:00:00").getTime();
     
     function updateCountdown() {
         const now = new Date().getTime();
         const timeLeft = feastDate - now;
         
         if (timeLeft <= 0) {
-            document.getElementById("countdown").innerHTML = "🎉 Feast Day is Here!";
-            clearInterval(countdownTimer);
-            return;
+             document.getElementById("countdown").innerHTML = `
+                 <div style="font-size: 1.3rem; font-weight: bold; color: darkred; margin-top: 1rem;">
+                        🎉 The Wait is Over <br> 🔥 Feast is going on <br> 🍽️ Enjoy the Feast!
+                 </div>
+                  `;
+             clearInterval(countdownTimer);
+             return;
         }
+
         
         // Calculate days, hours, minutes, seconds
         const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));

@@ -3,7 +3,7 @@
 
 {% block head %} {% load static %} <link rel="stylesheet" href="{% static 'styleForm.css' %}"> {% endblock %}
 
-{% block js %} {% endblock%}
+{% comment %} {% block js %} {% endblock%} {% endcomment %}
 
 
    {%block body%}
@@ -98,4 +98,31 @@
 
 
 
-    {% endblock%}
+ {% endblock%}
+
+ {% block js %}
+<script>
+    const alloted = document.getElementById("allotedHall");
+    const desired = document.getElementById("desiredHall");
+
+    function disableSameOptions() {
+        const allotedVal = alloted.value;
+        const desiredVal = desired.value;
+
+        for (let opt of desired.options) {
+            opt.disabled = opt.value === allotedVal && opt.value !== "";
+        }
+
+        for (let opt of alloted.options) {
+            opt.disabled = opt.value === desiredVal && opt.value !== "";
+        }
+    }
+
+    alloted.addEventListener("change", disableSameOptions);
+    desired.addEventListener("change", disableSameOptions);
+
+    // Initial check
+    disableSameOptions();
+</script>
+{% endblock %}
+

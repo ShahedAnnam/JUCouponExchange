@@ -90,7 +90,13 @@
 </div>
 {% endif %}
 
+
+
+
+{% block js %}
+
 <script>
+
 function copyToClipboard(text, iconEl) {
     navigator.clipboard.writeText(text).then(() => {
         const originalHTML = iconEl.outerHTML;
@@ -107,6 +113,32 @@ function copyToClipboard(text, iconEl) {
         }, 1500);
     });
 }
+
+    const alloted = document.getElementById("allotedHall");
+    const desired = document.getElementById("desiredHall");
+
+    function disableSameOptions() {
+        const allotedVal = alloted.value;
+        const desiredVal = desired.value;
+
+        for (let opt of desired.options) {
+            opt.disabled = opt.value === allotedVal && opt.value !== "";
+        }
+
+        for (let opt of alloted.options) {
+            opt.disabled = opt.value === desiredVal && opt.value !== "";
+        }
+    }
+
+    alloted.addEventListener("change", disableSameOptions);
+    desired.addEventListener("change", disableSameOptions);
+
+    // Initial check
+    disableSameOptions();
+
 </script>
+
+{% endblock %}
+
 
 {% endblock %}
