@@ -6,125 +6,125 @@
 
   @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Signika:wght@300..700&display=swap');
 
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw; /* Use viewport width to ensure full coverage */
-      height: 100vh; /* Use viewport height to ensure full coverage */
-      /* background-image: url('images/JUimg27.jpg'); */
-      background: linear-gradient(
-          rgba(34, 95, 41, 0.5),
-          rgba(50, 50, 50, 0.4)
-      ), url('../static/images/JUimg28.jpg');
-      background-size: cover; /* Maintain aspect ratio while covering */
-      background-position: center;
-      background-repeat: no-repeat; /* Prevent tiling of the image */
-      opacity: 0.85; /* Adjust transparency */
-      z-index: -1; /* Place behind content */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Use viewport width to ensure full coverage */
+    height: 100vh; /* Use viewport height to ensure full coverage */
+    /* background-image: url('images/JUimg27.jpg'); */
+    background: linear-gradient(
+        rgba(34, 95, 41, 0.5),
+        rgba(50, 50, 50, 0.4)
+    ), url('../static/images/JUimg28.jpg');
+    background-size: cover; /* Maintain aspect ratio while covering */
+    background-position: center;
+    background-repeat: no-repeat; /* Prevent tiling of the image */
+    opacity: 0.85; /* Adjust transparency */
+    z-index: -1; /* Place behind content */
   }
-  
+
   body {
-      position: relative;
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box; /* Ensure consistent sizing */
-      height: auto; /* Allow body height to adjust to content */
-      width: 100%; /* Ensure full width */
-      font-family: "Signika", serif;
-      display: flex;
-      flex-direction: column;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Ensure consistent sizing */
+    height: auto; /* Allow body height to adjust to content */
+    width: 100%; /* Ensure full width */
+    font-family: "Signika", serif;
+    display: flex;
+    flex-direction: column;
   }
-    
-    .container-fluid{
-        max-width: 900px;
-        margin: auto;
-        background: hsla(170, 100.00%, 75.90%, 0.05);
-        padding: 30px;
-        border-radius: 10px;
-        margin-top: 7em;
-        margin-bottom: -10em;
-        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.9);
-    }
-    h1 {
-        text-align: center;
-        color:rgb(0, 255, 21);
-        font-size: 32px;
-        font-weight: 600;
-        text-shadow: 2px 2px 5px rgba(0, 0, 0, 1);
-        margin-bottom: 20px;
-    }
-    .section {
-        margin-bottom: 30px;
-    }
-    h2 {
-        color:rgb(0, 153, 255);
-        font-size: 24px;
-        border-bottom: 2px solid rgb(0, 153, 255);
-        font-weight:600;
-        text-shadow: 2px 2px 5px rgba(0, 0, 0, 1);
-        padding-bottom: 8px;
-        margin-bottom: 15px;
-    }
-    .section ul {
-        list-style: none;
-        padding: 0;
-    }
-    .section ul li {
-        background:rgba(183, 255, 199, 0.77);
-        padding: 12px;
-        margin-bottom: 8px;
-        border-radius: 5px;
-        transition: all 0.3s ease;
-        font-size: 1.05em;
-    }
-    .section ul li:hover {
-        background: #d5dbdb;
-        transform: translateX(5px);
-    }
+
+  .container-fluid{
+      max-width: 900px;
+      margin: auto;
+      background: hsla(170, 100.00%, 75.90%, 0.05);
+      padding: 30px;
+      border-radius: 10px;
+      margin-top: 7em;
+      margin-bottom: -10em;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.9);
+  }
+  h1 {
+      text-align: center;
+      color:rgb(0, 255, 21);
+      font-size: 32px;
+      font-weight: 600;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 1);
+      margin-bottom: 20px;
+  }
+  .section {
+      margin-bottom: 30px;
+  }
+  h2 {
+      color:rgb(0, 153, 255);
+      font-size: 24px;
+      border-bottom: 2px solid rgb(0, 153, 255);
+      font-weight:600;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 1);
+      padding-bottom: 8px;
+      margin-bottom: 15px;
+  }
+  .section ul {
+      list-style: none;
+      padding: 0;
+  }
+  .section ul li {
+      background:rgba(183, 255, 199, 0.77);
+      padding: 12px;
+      margin-bottom: 8px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+      font-size: 1.05em;
+  }
+  .section ul li:hover {
+      background: #d5dbdb;
+      transform: translateX(5px);
+  }
 
 {% endblock %}
 
 {% block body %}
 
 <div class="container-fluid">
-    <h1>About JU Coupon Exchange</h1>
+  <h1>About JU Coupon Exchange</h1>
 
-    <div class="section">
-        <h2>📌 What is JU Coupon Exchange?</h2>
-        <ul>
-            <li>A dedicated platform for **Jahangirnagar University** students to exchange **hall feast coupons**.</li>
-            <li>Users can post whether they want to **offer** or **receive** a coupon.</li>
-            <li>Designed to make **coupon exchanges seamless and hassle-free**.</li>
-            <li>No complicated registration—just enter your **name and batch** to post or search.</li>
-        </ul>
-    </div>
+  <div class="section">
+      <h2>📌 What is JU Coupon Exchange?</h2>
+      <ul>
+          <li>A dedicated platform for <strong>Jahangirnagar University</strong> students to exchange <strong>hall feast coupons</strong>.</li>
+          <li>Users can post whether they want to <strong>offer</strong> or <strong>receive</strong> a coupon.</li>
+          <li>Designed to make <strong>coupon exchanges seamless and hassle-free</strong>.</li>
+          <li>No complicated registration—just enter your <strong>name and batch</strong> to post or search.</li>
+      </ul>
+  </div>
 
-    <div class="section">
-        <h2>🔹 How to Use the Website?</h2>
-        <ul>
-            <li><strong>Sign up</strong> with your **name, roll number, batch, and contact details** to post a request.</li>
-            <li>Your **batch and roll number** will be used for login and to access the coupon list.</li>
-            <li>This login ensures **accountability**, preventing users from misusing the exchange system.</li>
-            <li>Select whether you want to **offer** or **seek** a coupon.</li>
-            <li>Use the **search & filter** options to find matching coupons quickly.</li>
-            <li>Click on a post to **view details and directly contact** the user.</li>
-            <li>After a successful exchange, **delete your request** so others don’t contact you for the same coupon.</li>
-            <li>Once your exchange is complete, mark the coupon as **Exchanged**.</li>
-        </ul>
-    </div>
+  <div class="section">
+      <h2>🔹 How to Use the Website?</h2>
+      <ul>
+          <li><strong>Sign up</strong> with your <strong>name, roll number, batch, and contact details</strong> to post a request.</li>
+          <li>Your <strong>batch and roll number</strong> will be used for login and to access the coupon list.</li>
+          <li>This login ensures <strong>accountability</strong>, preventing users from misusing the exchange system.</li>
+          <li>Select whether you want to <strong>offer</strong> or <strong>seek</strong> a coupon.</li>
+          <li>Use the <strong>search & filter</strong> options to find matching coupons quickly.</li>
+          <li>Click on a post to <strong>view details and directly contact</strong> the user.</li>
+          <li>After a successful exchange, <strong>delete your request</strong> so others don’t contact you for the same coupon.</li>
+          <li>Once your exchange is complete, mark the coupon as <strong>Exchanged</strong>.</li>
+      </ul>
+  </div>
 
-    <div class="section">
-        <h2>🛠 How This Website is Built?</h2>
-        <ul>
-            <li><strong>Frontend:</strong> HTML, CSS, JavaScript for a smooth user experience.</li>
-            <li><strong>Backend:</strong> Django (Python) to handle user authentication and transactions.</li>
-            <li><strong>Database:</strong> SQLite to store and manage exchange requests.</li>
-            <li><strong>Hosting:</strong> PythonAnywhere for secure and stable deployment.</li>
-            <li><strong>Version Control:</strong> GitHub for code management and updates.</li>
-        </ul>
-    </div>
+  <div class="section">
+      <h2>🛠 How This Website is Built?</h2>
+      <ul>
+          <li><strong>Frontend:</strong> HTML, CSS, JavaScript for a smooth user experience.</li>
+          <li><strong>Backend:</strong> Django (Python) to handle user authentication and transactions.</li>
+          <li><strong>Database:</strong> SQLite to store and manage exchange requests.</li>
+          <li><strong>Hosting:</strong> PythonAnywhere for secure and stable deployment.</li>
+          <li><strong>Version Control:</strong> GitHub for code management and updates.</li>
+      </ul>
+  </div>
 </div>
 
 {% endblock %}
